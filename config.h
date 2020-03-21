@@ -121,8 +121,8 @@ static SiteSpecific certs[] = {
 	{ "://suckless\\.org/", "suckless.org.crt" },
 };
 
-#define QSEARCH {
-	.v = (chart *[]){"/bin/sh", "-c", "surf_search.sh $0 $1", winid, NULL } \
+#define QSEARCH { \
+	.v = (char *[]){"/bin/sh", "-c", "surf_search.sh $0 $1", winid, NULL } \
 }
 
 #define MODKEY GDK_CONTROL_MASK
@@ -185,7 +185,7 @@ static Key keys[] = {
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_t,      toggle,     { .i = StrictTLS } },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_m,      toggle,     { .i = Style } },
 
-	{ MODKEY, GDK_q, spawn, QSEARCH },
+	{ MODKEY,                GDK_KEY_q,          spawn,      QSEARCH },
 };
 
 /* button definitions */
